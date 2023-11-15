@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section class="business">
     <div class="business-area">
 
       <div class="container">
@@ -193,7 +193,7 @@ export default {
 
     .card {
       padding: 10px;
-      flex-basis: 33%;
+      flex-basis: 33.333%;
 
       .card-content {
         background-color: white;
@@ -213,6 +213,10 @@ export default {
         .card-text {
           .title {
             margin-bottom: 14px;
+          }
+
+          .description {
+            color: #7F8990;
           }
         }
       }

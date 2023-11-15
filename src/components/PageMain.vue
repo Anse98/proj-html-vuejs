@@ -1,6 +1,7 @@
 <script>
 import Hero from './PageHero.vue';
 import BusinessArea from './BusinessArea.vue';
+import PageNetwork from './PageNetwork.vue';
 
 export default {
   data() {
@@ -11,6 +12,7 @@ export default {
   components: {
     Hero,
     BusinessArea,
+    PageNetwork,
   }
 
 }
@@ -21,6 +23,7 @@ export default {
     <div class="main-content">
       <Hero />
       <BusinessArea />
+      <PageNetwork />
     </div>
   </main>
 </template>
