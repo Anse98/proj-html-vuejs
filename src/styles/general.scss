@@ -18,7 +18,6 @@ ol {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 a {
@@ -30,6 +29,12 @@ img {
   width: 100%;
 }
 
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 button {
   padding: 0 20px;
   line-height: 2.5em;
@@ -37,4 +42,10 @@ button {
   font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.bg-azure {
+  color: currentColor;
+  background-color: #D5E7E8;
+  padding: 8px;
 }

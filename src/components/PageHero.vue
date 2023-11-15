@@ -1,32 +1,37 @@
 <script>
+export default {
+  data() {
+    return {
+      itemList: ['HOME', 'SERVICES', 'ABOUT', 'PROJECTS', 'RESULTS'],
+    }
+  }
+}
 </script>
 
 <template>
   <!-- navbar -->
   <section class="hero">
-    <nav>
-      <div class="hero-navbar">
-        <div class="logo">
-          <figure>
-            <img src="/public/logo.PNG" alt="#">
-          </figure>
-        </div>
+    <div class="container">
+      <nav>
+        <div class="hero-navbar">
+          <div class="logo">
+            <figure>
+              <img src="/public/logo.PNG" alt="#">
+            </figure>
+          </div>
 
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">PROJECTS</a></li>
-          <li><a href="#">RESULTS</a></li>
-          <li><button>GET IN TOUCH</button></li>
-        </ul>
-      </div>
-    </nav>
+          <ul>
+            <li v-for="item in itemList"><a href="#">{{ item }}</a></li>
+            <li><button>GET IN TOUCH</button></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <!-- hero content -->
     <div class="hero-content">
       <div class="hero-text">
 
-        <h1 class="title"><span class="ready">Ready</span> <span class="team">Team</span></h1>
+        <h1 class="title"><span class="ready">Ready</span> <span class="bg-azure">Team</span></h1>
 
         <p class="text">No matter what your company needs, we will be ready to assist you in the best possible way</p>
 
@@ -41,12 +46,11 @@
 
 <style scoped lang="scss">
 .hero {
-
   nav {
 
     .hero-navbar {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       padding-top: 8px;
       color: #42515A;
@@ -94,10 +98,8 @@
           color: #21333E;
         }
 
-        .team {
+        .bg-azure {
           color: #058283;
-          background-color: #D5E7E8;
-          padding: 8px;
         }
       }
 

@@ -1,12 +1,15 @@
 <script >
 import PageHeader from './components/PageHeader.vue';
-import PageHero from './components/PageHero.vue';
+import PageMain from './components/PageMain.vue';
+import PageFooter from './components/PageFooter.vue';
+
 
 export default {
 
   components: {
     PageHeader,
-    PageHero
+    PageMain,
+    PageFooter
   }
 }
 
@@ -14,7 +17,8 @@ export default {
 
 <template>
   <PageHeader />
-  <PageHero />
+  <PageMain />
+  <PageFooter />
 </template>
 
 <style lang="scss">
