@@ -1,0 +1,130 @@
+<script>
+</script>
+
+<template>
+  <!-- navbar -->
+  <section class="hero">
+    <nav>
+      <div class="hero-navbar">
+        <div class="logo">
+          <figure>
+            <img src="/public/logo.PNG" alt="#">
+          </figure>
+        </div>
+
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PROJECTS</a></li>
+          <li><a href="#">RESULTS</a></li>
+          <li><button>GET IN TOUCH</button></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hero content -->
+    <div class="hero-content">
+      <div class="hero-text">
+
+        <h1 class="title"><span class="ready">Ready</span> <span class="team">Team</span></h1>
+
+        <p class="text">No matter what your company needs, we will be ready to assist you in the best possible way</p>
+
+        <div class="buttons">
+          <button class="get-btn">GET IN TOUCH</button>
+          <button class="read-btn">READ MORE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="scss">
+.hero {
+
+  nav {
+
+    .hero-navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 8px;
+      color: #42515A;
+
+      .logo {
+        figure {
+          max-width: 130px;
+        }
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        button {
+          border: none;
+          background-color: #058283;
+          color: white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .hero-content {
+    height: 680px;
+    background-image: url("public/images/bg-parallax.png");
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .hero-text {
+      max-width: 400px;
+      text-align: center;
+
+      .title {
+        font-size: 50px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        .ready {
+          color: #21333E;
+        }
+
+        .team {
+          color: #058283;
+          background-color: #D5E7E8;
+          padding: 8px;
+        }
+      }
+
+      .text {
+        max-width: 350px;
+        line-height: 1.5em;
+        color: #7F8990;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .get-btn {
+          border: none;
+          background-color: #058283;
+          color: white;
+        }
+
+        .read-btn {
+          border: solid 1px #058283;
+          color: #058283;
+        }
+      }
+    }
+  }
+}
+</style>

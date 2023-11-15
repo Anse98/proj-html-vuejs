@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  padding: 0 20px;
+  line-height: 2.5em;
+  color: currentColor;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+}
