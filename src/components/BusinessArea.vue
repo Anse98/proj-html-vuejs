@@ -156,6 +156,11 @@ export default {
   padding: 80px 0;
 
   .container {
+
+    .row {
+      align-items: center;
+    }
+
     .mini-title {
       margin-bottom: 30px;
       color: #00A6A6;
@@ -206,6 +211,7 @@ export default {
 
         .card-header {
           display: flex;
+          align-items: center;
           justify-content: space-between;
           margin-bottom: 14px;
         }

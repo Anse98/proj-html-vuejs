@@ -2,6 +2,7 @@
 import Hero from './PageHero.vue';
 import BusinessArea from './BusinessArea.vue';
 import PageNetwork from './PageNetwork.vue';
+import Actions from './Actions.vue';
 
 export default {
   data() {
@@ -13,6 +14,7 @@ export default {
     Hero,
     BusinessArea,
     PageNetwork,
+    Actions,
   }
 
 }
@@ -24,6 +26,7 @@ export default {
       <Hero />
       <BusinessArea />
       <PageNetwork />
+      <Actions />
     </div>
   </main>
 </template>

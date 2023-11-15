@@ -159,6 +159,7 @@
 
         .icon {
           color: #00A4A3;
+          font-size: 20px;
         }
       }
     }
@@ -175,6 +176,36 @@
         border: solid 1px #00A4A3;
         color: white;
         background-color: #111117;
+      }
+    }
+  }
+
+  .right-part {
+    .image {
+      figure {
+        img {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .network {
+    flex-direction: column;
+
+    .content {
+      justify-content: center;
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        .read {
+          margin-right: 40px;
+        }
       }
     }
   }
