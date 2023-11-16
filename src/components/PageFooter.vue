@@ -151,32 +151,6 @@ footer {
             }
           }
         }
-
-        .about,
-        .services,
-        .support {
-          padding: 18px;
-          background-color: #19191F;
-          border-radius: 8px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-
-          .title {
-            color: white;
-            margin-bottom: 14px;
-          }
-
-          ul {
-            display: flex;
-            flex-direction: column;
-            row-gap: 6px;
-          }
-
-          .icon {
-            margin-right: 8px;
-          }
-        }
       }
     }
   }

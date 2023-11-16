@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="about">
+  <div class="footer-menu">
     <h3 class="title">{{ item.title }}</h3>
     <ul>
       <li v-for="(voice, index) in item.voices" :key="index">
@@ -22,7 +22,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.about {
+.footer-menu {
   padding: 18px;
   background-color: #19191F;
   border-radius: 8px;
