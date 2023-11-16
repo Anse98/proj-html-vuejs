@@ -1,5 +1,37 @@
 <script>
+import FooterMenu from './FooterMenu.vue'
 
+export default {
+  components: {
+    FooterMenu,
+  },
+
+  data() {
+    return {
+      menus: [
+        {
+          title: 'About',
+          voices: [
+            'The company', 'Institutional', 'Social & Events', 'Innovation', 'Environment', 'Technology']
+        },
+
+        {
+          title: 'Services',
+          voices: [
+            'Audit & Assurance', 'Financial Advisory', 'Analytics M&A', 'Middle Marketing', 'Legal Consulting', 'Regulatory Risk'
+          ]
+        },
+
+        {
+          title: 'Support',
+          voices: [
+            'Responsability', 'Terms of Use', 'About Cookies', 'Privacy Policy', 'Accessibility', 'Information'
+          ]
+        }
+      ]
+    }
+  },
+}
 </script>
 
 <template>
@@ -43,95 +75,8 @@
             </div>
           </div>
 
-          <div class="about">
-            <h3 class="title">About</h3>
-            <ul>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                The company
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Institutional
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Social & Events
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Innovation
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Enviroment
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Technology
-              </li>
-            </ul>
-          </div>
+          <FooterMenu v-for="(menu, index) in menus" :item="menu" :key="index" />
 
-          <div class="services">
-            <h3 class="title">Services</h3>
-            <ul>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Audit & Assurance
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Financial Advisory
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Analytics M&A
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Middle Marketing
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Legal Consulting
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Regulatory Risk
-              </li>
-            </ul>
-          </div>
-
-          <div class="support">
-            <h3 class="title">Support</h3>
-            <ul>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Responsability
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Terms of Use
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                About Cookies
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Privacy Policy
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Accessibility
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-chevron-right" class="icon" />
-                Information
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
