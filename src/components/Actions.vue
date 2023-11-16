@@ -1,5 +1,25 @@
 <script>
+export default {
+  data() {
+    return {
+      clicked: false,
+    }
+  },
 
+  props: {
+    item: {
+      type: Array,
+      required: true,
+    }
+  },
+
+  methods: {
+    showActive() {
+      this.clicked = true
+    }
+  }
+
+}
 </script>
 
 <template>
@@ -23,13 +43,9 @@
 
       <nav>
         <ul>
-          <li class="bg-azure"><a href="">ALL</a></li>
-          <li><a href="#">INSTITUTIONAL</a></li>
-          <li><a href="#">SOCIAL</a></li>
-          <li><a href="#">EVENTS</a></li>
-          <li><a href="#">INNOVATION</a></li>
-          <li><a href="#">ENVIROMENT</a></li>
-          <li><a href="#">TECHNOLOGY</a></li>
+          <li v-for="(listItem, index) in item" :key="index">
+            {{ listItem }}
+          </li>
         </ul>
       </nav>
 
@@ -110,6 +126,7 @@
 
         li {
           color: #7F8990;
+          cursor: pointer;
         }
       }
     }

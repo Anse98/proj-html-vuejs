@@ -7,7 +7,7 @@ export default {
   },
 
   props: {
-    items: {
+    item: {
       type: Array,
       required: true,
     }
@@ -28,7 +28,7 @@ export default {
           </div>
 
           <ul>
-            <li v-for="listItem in items"><a href="#">{{ listItem }}</a></li>
+            <li v-for="listItem in item"><a href="#">{{ listItem }}</a></li>
             <li><button>GET IN TOUCH</button></li>
           </ul>
         </div>
