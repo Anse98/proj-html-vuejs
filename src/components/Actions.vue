@@ -85,7 +85,7 @@
 
       .mini-title {
         margin-bottom: 26px;
-        color: #058283;
+        color: #00A4A3;
       }
 
       .title {
@@ -94,7 +94,7 @@
 
 
         .bg-azure {
-          color: #058283;
+          color: #00A4A3;
         }
       }
     }

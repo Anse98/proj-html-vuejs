@@ -94,7 +94,7 @@
         .mini-title {
           padding-top: 90px;
           margin-bottom: 50px;
-          color: #058283;
+          color: #00A4A3;
         }
 
         .title {
@@ -114,7 +114,7 @@
 
         p {
           font-size: 30px;
-          color: #058283;
+          color: #00A4A3;
         }
 
         h4 {

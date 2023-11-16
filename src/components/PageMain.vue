@@ -4,6 +4,7 @@ import BusinessArea from './BusinessArea.vue';
 import PageNetwork from './PageNetwork.vue';
 import Actions from './Actions.vue';
 import Results from './Results.vue';
+import ContactUs from './ContactUs.vue';
 
 export default {
   data() {
@@ -17,6 +18,7 @@ export default {
     PageNetwork,
     Actions,
     Results,
+    ContactUs,
   }
 
 }
@@ -30,6 +32,7 @@ export default {
       <PageNetwork />
       <Actions />
       <Results />
+      <ContactUs />
     </div>
   </main>
 </template>
