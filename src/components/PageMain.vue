@@ -9,7 +9,7 @@ import ContactUs from './ContactUs.vue';
 export default {
   data() {
     return {
-
+      navItemList: ['HOME', 'SERVICES', 'ABOUT', 'PROJECTS', 'RESULTS'],
     }
   },
   components: {
@@ -27,7 +27,7 @@ export default {
 <template>
   <main>
     <div class="main-content">
-      <Hero />
+      <Hero :items="navItemList" />
       <BusinessArea />
       <PageNetwork />
       <Actions />

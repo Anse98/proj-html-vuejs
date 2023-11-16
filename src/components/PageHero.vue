@@ -2,7 +2,14 @@
 export default {
   data() {
     return {
-      itemList: ['HOME', 'SERVICES', 'ABOUT', 'PROJECTS', 'RESULTS'],
+
+    }
+  },
+
+  props: {
+    items: {
+      type: Array,
+      required: true,
     }
   }
 }
@@ -21,7 +28,7 @@ export default {
           </div>
 
           <ul>
-            <li v-for="item in itemList"><a href="#">{{ item }}</a></li>
+            <li v-for="listItem in items"><a href="#">{{ listItem }}</a></li>
             <li><button>GET IN TOUCH</button></li>
           </ul>
         </div>
