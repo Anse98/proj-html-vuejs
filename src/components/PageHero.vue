@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-
+      clicked: false,
+      btnRead: true,
     }
   },
 
@@ -10,6 +11,18 @@ export default {
     item: {
       type: Array,
       required: true,
+    }
+  },
+
+  methods: {
+    btnClicked() {
+      this.clicked = true
+      this.btnRead = false
+    },
+
+    btnClickedAgain() {
+      this.clicked = false
+      this.btnRead = true
     }
   }
 }
@@ -40,11 +53,22 @@ export default {
 
         <h1 class="title"><span class="ready">Ready</span> <span class="bg-azure">Team</span></h1>
 
-        <p class="text">No matter what your company needs, we will be ready to assist you in the best possible way</p>
+        <p class="text">No matter what your company needs, we will be ready to assist you in the best possible way.<br>
+          <span class="read-more" v-show="clicked">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+            tempora doloremque
+            eius assumenda
+            repellat quis perferendis vero libero architecto. Itaque, quia sunt. Quibusdam, porro quod vel libero
+            assumenda error voluptates.
+          </span>
+        </p>
+
 
         <div class="buttons">
           <button class="get-btn">GET IN TOUCH</button>
-          <button class="read-btn">READ MORE</button>
+          <button class="read-btn" @click="btnClicked()" v-if="btnRead">READ MORE <font-awesome-icon
+              icon="fa-solid fa-chevron-down" class="icon" /></button>
+          <button v-else @click="btnClickedAgain()" class="red-btn">READ LESS <font-awesome-icon
+              icon="fa-solid fa-chevron-up" class="icon" /></button>
         </div>
       </div>
     </div>
@@ -128,9 +152,14 @@ export default {
           color: white;
         }
 
-        .read-btn {
+        .read-btn,
+        .red-btn {
           border: solid 1px #058283;
           color: #058283;
+
+          .icon {
+            margin-left: 10px;
+          }
         }
       }
     }
