@@ -98,7 +98,9 @@
           </div>
 
           <div class="example-btn">
-            <button>VIEW MAP</button>
+            <button><a
+                href="https://www.google.com/maps/place/987+Main+Ave,+Passaic,+NJ+07055,+Stati+Uniti/@40.8708403,-74.1382838,17z/data=!4m6!3m5!1s0x89c2fec8aa3213e5:0xab6c00ef8f54a598!8m2!3d40.8706943!4d-74.1355801!16s%2Fg%2F11cpj7y3tt?entry=ttu">VIEW
+                MAP</a></button>
           </div>
 
         </div>

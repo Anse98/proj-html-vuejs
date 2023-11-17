@@ -1,5 +1,21 @@
 <script>
+export default {
+  data() {
+    return {
+      customersNum: 517,
+    }
+  },
 
+  methods: {
+    increaseCustomers() {
+      this.customersNum++;
+    },
+  },
+
+  mounted() {
+    setInterval(this.increaseCustomers, 3000)
+  }
+}
 </script>
 
 <template>
@@ -30,7 +46,7 @@
           </div>
 
           <div class="customers">
-            <p>517</p>
+            <p>{{ customersNum }}</p>
             <h4>Customers</h4>
           </div>
 
