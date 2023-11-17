@@ -1,8 +1,47 @@
 <script>
+import CardActions from './CardActions.vue'
+
 export default {
+
+  components: {
+    CardActions,
+  },
+
   data() {
     return {
-      clicked: false,
+      cards: [
+        {
+          class: 'card-content project-1',
+          title: 'Academic professional program in social media'
+        },
+
+        {
+          class: 'card-content project-2',
+          title: "President's speech at the annual meeting"
+        },
+
+        {
+          class: 'card-content project-3',
+          title: 'International business trip in Shangai'
+        },
+
+        {
+          class: 'card-content project-4',
+          title: 'Technology workshop with education theme'
+        },
+
+        {
+          class: 'card-content project-5',
+          title: 'Donation of clothes and food to the partner NGO'
+        },
+
+        {
+          class: 'card-content project-6',
+          title: 'Confraternization of the procurement team'
+        },
+      ],
+
+      indexActive: 0,
     }
   },
 
@@ -14,8 +53,8 @@ export default {
   },
 
   methods: {
-    showActive() {
-      this.clicked = true
+    showActive(index) {
+      this.indexActive = index;
     }
   }
 
@@ -43,7 +82,8 @@ export default {
 
       <nav>
         <ul>
-          <li v-for="(listItem, index) in item" :key="index">
+          <li v-for="(listItem, index) in item" :key="index" @click="showActive(index)"
+            :class="{ bgAzure: index === indexActive }">
             {{ listItem }}
           </li>
         </ul>
@@ -51,41 +91,9 @@ export default {
 
       <!-- cards -->
       <div class="cards">
-        <div class="card">
-          <div class="card-content project-1">
-            <h2 class="title">Academic professional program in social media</h2>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-content project-2">
-            <h2 class="title">President's speech at the annual meeting</h2>
-          </div>
-        </div>
+        <CardActions v-for="(card, index) in cards" :key="index" :item="card" />
 
-        <div class="card">
-          <div class="card-content project-3">
-            <h2 class="title">International business trip in Shangai</h2>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content project-4">
-            <h2 class="title">Technology workshop with education theme</h2>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content project-5">
-            <h2 class="title">Donation of clothes and food to the partner NGO</h2>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content project-6">
-            <h2 class="title">Confraternization of the procurement team</h2>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -135,66 +143,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       row-gap: 20px;
-
-      .card {
-        flex-basis: 33.333%;
-        padding: 0 10px;
-
-        .card-content {
-          height: 250px;
-          position: relative;
-          border-radius: 20px;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-          }
-
-          .title {
-            color: white;
-            padding: 0 10px;
-            text-align: center;
-            position: absolute;
-            bottom: 30px;
-          }
-
-          &.project-1 {
-            background: url('/public/images/project-1.jpg') no-repeat center;
-            background-size: cover;
-          }
-
-          &.project-2 {
-            background: url('/public/images/project-2.jpg') no-repeat center;
-            background-size: cover;
-          }
-
-          &.project-3 {
-            background: url('/public/images/project-3.jpg') no-repeat center;
-            background-size: cover;
-          }
-
-          &.project-4 {
-            background: url('/public/images/project-4.jpg') no-repeat center;
-            background-size: cover;
-          }
-
-          &.project-5 {
-            background: url('/public/images/project-5.jpg') no-repeat center;
-            background-size: cover;
-          }
-
-          &.project-6 {
-            background: url('/public/images/project-6.jpg') no-repeat center;
-            background-size: cover;
-          }
-        }
-      }
     }
   }
 }
