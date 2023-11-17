@@ -1,10 +1,59 @@
 <script>
+import CardBusinessArea from './CardBusinessArea.vue';
+
 export default {
   data() {
     return {
+      BusinessCards: [
+        {
+          src: '/public/svgs/svg-1.svg',
+          title: 'Audit & Assurance',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 1
+        },
 
+        {
+          src: '/public/svgs/svg-2.svg',
+          title: 'Financial Advisory',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 2
+        },
+
+        {
+          src: '/public/svgs/svg-3.svg',
+          title: 'Analytics and M&A',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 3
+        },
+
+        {
+          src: '/public/svgs/svg-4.svg',
+          title: 'Middle Marketing',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 4
+        },
+
+        {
+          src: '/public/svgs/svg-5.svg',
+          title: 'Legal Consulting',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 5
+        },
+
+        {
+          src: '/public/svgs/svg-6.svg',
+          title: 'Regulatory Risk',
+          description: 'Lorem ipsum dolor sit amet consecteur adipiscing elit',
+          id: 6
+        },
+
+      ]
     }
   },
+
+  components: {
+    CardBusinessArea,
+  }
 }
 </script>
 
@@ -35,113 +84,7 @@ export default {
         <!-- cards -->
         <div class="row">
 
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-1.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Audit & Assurance</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-2.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Financial Advisory</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-3.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Analytics and M&A</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-4.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Middle Marketing</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-5.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Legal Consulting</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-content">
-
-              <div class="card-header">
-                <figure>
-                  <img src="/public/svgs/svg-6.svg" alt="#">
-                </figure>
-                <font-awesome-icon icon="fa-solid fa-arrow-right" />
-              </div>
-
-              <div class="card-text">
-                <h3 class="title">Regulatory Risk</h3>
-                <p class="description">Lorem ipsum dolor sit amet consecteur adipiscing elit</p>
-              </div>
-
-            </div>
-          </div>
+          <CardBusinessArea v-for="card in BusinessCards" :key="card.id" :item="card" />
 
         </div>
       </div>
@@ -192,38 +135,6 @@ export default {
           background-color: #058283;
           border: none;
           color: white;
-        }
-      }
-    }
-
-    .card {
-      padding: 10px;
-      flex-basis: 33.333%;
-
-      .card-content {
-        background-color: white;
-        padding: 22px;
-        border-radius: 7px;
-
-        figure {
-          max-width: 30px;
-        }
-
-        .card-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 14px;
-        }
-
-        .card-text {
-          .title {
-            margin-bottom: 14px;
-          }
-
-          .description {
-            color: #7F8990;
-          }
         }
       }
     }
