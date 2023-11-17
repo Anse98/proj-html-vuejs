@@ -67,8 +67,8 @@ export default {
           <button class="get-btn">GET IN TOUCH</button>
           <button class="read-btn" @click="btnClicked()" v-if="btnRead">READ MORE <font-awesome-icon
               icon="fa-solid fa-chevron-down" class="icon" /></button>
-          <button v-else @click="btnClickedAgain()" class="red-btn">READ LESS <font-awesome-icon
-              icon="fa-solid fa-chevron-up" class="icon" /></button>
+          <button v-else @click="btnClickedAgain()" class="red-btn">HIDE<font-awesome-icon icon="fa-solid fa-chevron-up"
+              class="icon" /></button>
         </div>
       </div>
     </div>

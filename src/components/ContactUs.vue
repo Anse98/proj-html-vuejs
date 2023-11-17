@@ -1,5 +1,36 @@
 <script>
+export default {
+  data() {
+    return {
+      sentForm: false,
+      correctData: false,
+      nameValue: '',
+      emailValue: '',
+      numberValue: '',
+      wrongData: false,
+    }
+  },
 
+  methods: {
+    sendForm() {
+      this.sentForm = true;
+
+      if (this.nameValue.length > 3 & this.emailValue.includes('@') & this.numberValue.length > 9) {
+        this.correctData = true;
+        this.wrongData = false;
+      } else {
+        this.wrongData = true;
+        this.correctData = false;
+      }
+
+      setTimeout(this.hideFormValidation, 3000)
+    },
+
+    hideFormValidation() {
+      this.sentForm = false
+    }
+  },
+}
 </script>
 
 <template>
@@ -32,18 +63,30 @@
 
               <div class="name-email">
                 <div class="name">
-                  <input type="text" placeholder="Name">
+                  <div class="advices">
+                    <small class="small">Il nome deve contenere almeno 3 caratteri</small>
+                  </div>
+
+                  <input type="text" placeholder="Name" v-model="nameValue">
                   <img src="/public/images/image (1).png" alt="">
                 </div>
 
                 <div class="email">
-                  <input type="email" placeholder="Email">
+                  <div class="advices">
+                    <small class="small">L'indirizzo email deve contenere la chiocciola</small>
+                  </div>
+
+                  <input type="email" placeholder="Email" v-model="emailValue">
                 </div>
               </div>
 
               <div class="phone-info">
                 <div class="phone">
-                  <input type="number" placeholder="Phone">
+                  <input type="text" placeholder="Phone" v-model="numberValue">
+                  <div class="advices">
+                    <small class="small">Il numero deve contenere almeno 10 cifre</small>
+                  </div>
+
                 </div>
 
                 <div class="info">
@@ -61,7 +104,19 @@
 
           <!-- bottone form -->
           <div class="form-btn">
-            <button>SEND</button>
+            <button @click="sendForm()">SEND</button>
+
+            <div class="form-validation-text" v-if="sentForm">
+
+              <p v-if="correctData">Hai inviato i dati correttamente !
+                <font-awesome-icon icon="fa-solid fa-circle-check" class="icon-correct" />
+              </p>
+
+              <p v-if="wrongData">Non hai inserito i dati correttamente !
+                <font-awesome-icon icon="fa-solid fa-circle-xmark" class="icon-wrong" />
+              </p>
+
+            </div>
           </div>
 
         </div>
@@ -222,6 +277,14 @@
               border: none;
               margin-bottom: 20px;
             }
+
+            .advices {
+              text-align: center;
+
+              .small {
+                color: #868689;
+              }
+            }
           }
         }
 
@@ -231,6 +294,18 @@
             border: none;
             background-color: #058283;
             color: white;
+          }
+
+          .form-validation-text {
+            margin-top: 20px;
+
+            .icon-correct {
+              color: green;
+            }
+
+            .icon-wrong {
+              color: tomato;
+            }
           }
         }
       }
